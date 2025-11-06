@@ -65,8 +65,34 @@ public class Home_Pg extends JFrame implements ActionListener {
 
     }
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        String t = e.getActionCommand();
+
+        if(t.equals("ADD Customer")){
+            ADD_Customer_details p = new ADD_Customer_details();
+        }
+        else if(t.equals("Flight details")){
+            new Flight_details();
+        }
+        else  if(t.equals("Book flight")){
+            new Book_Flight();
+        }
+        else  if(t.equals("Journey details")){
+            new Journey();
+        }
+        else  if(t.equals("Cancle flight")){
+            new cancel_Reservation();
+        }
+        else  if(t.equals("Boarding Pass")){
+            new Boarding_Pass();
+        }
+
+    }
+    public static void main(String[] args) {
+        new Home_Pg();
     }
 }
+
