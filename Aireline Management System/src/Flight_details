@@ -1,3 +1,4 @@
+
 import net.proteanit.sql.DbUtils;
 import javax.swing.*;
 import java.awt.*;
@@ -27,5 +28,29 @@ public class Flight_details extends JFrame implements ActionListener {
         jsp.getViewport().setOpaque(false);
         jsp.setBorder(null);
         add(jsp);
-}
+
+        try {
+            DATA_BASE_CONNECTIVITY c = new DATA_BASE_CONNECTIVITY();
+            ResultSet rs = c.s.executeQuery("SELECT * FROM Flight00");
+            table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage());
+        }
+
+
+        setLayout(null);
+        setSize(800, 720);
+        setLocation(300, 60);
+        add(Bg_Label);
+        setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+    }
+
+    public static void main(String[] args) {
+        new Flight_details();
+    }
 }
