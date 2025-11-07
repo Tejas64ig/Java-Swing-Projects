@@ -1,0 +1,31 @@
+import net.proteanit.sql.DbUtils;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+
+public class Flight_details extends JFrame implements ActionListener {
+
+    public Flight_details() {
+        setTitle("Flight Details");
+
+        ImageIcon Bg = new ImageIcon("C:\\Users\\HP\\Downloads\\ChatGPT Image May 26, 2025, 09_17_07 PM.png");
+        JLabel Bg_Label = new JLabel(Bg);
+        Bg_Label.setBounds(0, 0, 800, 720);
+
+        JTable table = new JTable();
+        table.setOpaque(false);
+        table.setBackground(new Color(0, 0, 0, 0));
+        table.setForeground(Color.WHITE);
+
+        //table.setShowGrid(false);
+
+        JScrollPane jsp = new JScrollPane(table);
+        jsp.setBounds(30, 30, 720, 400);
+        jsp.setOpaque(false);
+        jsp.getViewport().setOpaque(false);
+        jsp.setBorder(null);
+        add(jsp);
+}
+}
