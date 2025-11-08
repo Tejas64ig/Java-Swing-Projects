@@ -1,4 +1,3 @@
-
 import net.proteanit.sql.DbUtils;
 import javax.swing.*;
 import java.awt.*;
@@ -6,51 +5,105 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
-public class Flight_details extends JFrame implements ActionListener {
+public class Journey   extends  JFrame implements ActionListener {
+    JLabel PNR_LB;
+    JTextField PNR_tf;
 
-    public Flight_details() {
-        setTitle("Flight Details");
+    JButton  Fetch_Button ;
+
+    JTable table;
+    Journey() {
+        JPanel p = new JPanel();
 
         ImageIcon Bg = new ImageIcon("C:\\Users\\HP\\Downloads\\ChatGPT Image May 26, 2025, 09_17_07 PM.png");
         JLabel Bg_Label = new JLabel(Bg);
         Bg_Label.setBounds(0, 0, 800, 720);
 
-        JTable table = new JTable();
-        table.setOpaque(false);
-        table.setBackground(new Color(0, 0, 0, 0));
-        table.setForeground(Color.WHITE);
+        setTitle(" Journey Details");
+        setLayout(null);
+        setSize(800, 720);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //table.setShowGrid(false);
+        p.setLayout(null);
+
+        JLabel top_LB = new JLabel("Journey Details");
+        top_LB.setBounds(210, 40, 400, 30);
+        top_LB.setFont(new Font("Railway", Font.BOLD, 26));
+        top_LB.setForeground(Color.WHITE);
+        p.add(top_LB);
+
+        PNR_LB = new JLabel("PNR Num");
+        PNR_LB.setBounds(80, 140, 150, 30);
+        PNR_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        PNR_LB.setForeground(Color.WHITE);
+        p.add(PNR_LB);
+
+        PNR_tf = new JTextField();
+        PNR_tf.setForeground(Color.WHITE);
+        PNR_tf.setBounds(250, 140, 150, 30);
+        PNR_tf.setOpaque(false);
+        p.add(PNR_tf);
+
+        Fetch_Button = new JButton("Fetch Details");
+        Fetch_Button.setBounds(410, 140, 120, 30);
+        Fetch_Button.setForeground(Color.white);
+        Fetch_Button.setBackground(Color.black);
+        Fetch_Button.setFocusable(false);
+        Fetch_Button.setOpaque(false);
+        Fetch_Button.addActionListener(this);
+        p.add(Fetch_Button);
+
+        table = new JTable();
+        /*
+        table.setOpaque(false);
+        ((DefaultTableCellRenderer) table.getDefaultRenderer(Object.class)).setOpaque(false);
+        table.setShowGrid(false);
+        table.setForeground(Color.WHITE);
+        */
 
         JScrollPane jsp = new JScrollPane(table);
-        jsp.setBounds(30, 30, 720, 400);
+        jsp.setBounds(0, 200, 800, 150);
         jsp.setOpaque(false);
         jsp.getViewport().setOpaque(false);
         jsp.setBorder(null);
-        add(jsp);
+        p.add(jsp);
 
-        try {
-            DATA_BASE_CONNECTIVITY c = new DATA_BASE_CONNECTIVITY();
-            ResultSet rs = c.s.executeQuery("SELECT * FROM Flight00");
-            table.setModel(DbUtils.resultSetToTableModel(rs));
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage());
-        }
+        p.setBounds(0, 0, 800, 800);
+        p.setOpaque(false);
+        p.setLayout(null);
+        add(p);
 
-
+        p.add(Bg_Label); // added the img at last so that it can become transparent ||
+        setContentPane(p);
         setLayout(null);
-        setSize(800, 720);
-        setLocation(300, 60);
-        add(Bg_Label);
+        setSize(800, 800);
+        setLocation(250, 30);
+        setVisible(true);
+
         setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-    }
+        if (e.getSource() == Fetch_Button) {
 
-    public static void main(String[] args) {
-        new Flight_details();
+            String PNR = PNR_tf.getText();
+
+            try {
+                DATA_BASE_CONNECTIVITY c = new DATA_BASE_CONNECTIVITY();
+
+                String q = "select * from Reservation  where PNR = '" + PNR + "'";
+                ResultSet rs = c.s.executeQuery(q);
+
+                if (!rs.isBeforeFirst()) {
+                    JOptionPane.showMessageDialog(null, "No Information Found");
+                    return;
+                }
+                table.setModel(DbUtils.resultSetToTableModel(rs));
+
+            } catch (Exception ee) {
+                ee.printStackTrace();
+            }
+        }
     }
 }
