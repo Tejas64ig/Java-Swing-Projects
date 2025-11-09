@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.util.Random;
 
-
 public class Book_Flight extends  JFrame implements ActionListener {
+
 
 
     JLabel AadharNO_LB;
@@ -43,3 +43,185 @@ public class Book_Flight extends  JFrame implements ActionListener {
     JDateChooser dateChooser;
 
     JButton Save_button;
+
+    Book_Flight() {
+        JPanel p = new JPanel();
+
+        ImageIcon Bg = new ImageIcon("C:\\Users\\HP\\Downloads\\ChatGPT Image May 26, 2025, 09_17_07 PM.png");
+        JLabel Bg_Label = new JLabel(Bg);
+        Bg_Label.setBounds(0, 0, 800, 720);
+
+
+        ImageIcon img = new ImageIcon("C:\\Users\\HP\\Downloads\\close s2 (1).jpg");
+        JLabel img_lb = new JLabel(img);
+        img_lb.setBounds(530, 150, 350, 360);
+        p.add(img_lb);
+
+        setTitle("Book Your Flight");
+        JLabel top_LB = new JLabel("Flight Booking");
+        top_LB.setBounds(210, 40, 400, 30);
+        top_LB.setFont(new Font("Railway", Font.BOLD, 26));
+        top_LB.setForeground(Color.WHITE);
+        p.add(top_LB);
+
+        AadharNO_LB = new JLabel("Aadhar Num");
+        AadharNO_LB.setBounds(80, 140, 150, 30);
+        AadharNO_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        AadharNO_LB.setForeground(Color.WHITE);
+        p.add(AadharNO_LB);
+
+        AadharNO_tf = new JTextField();
+        AadharNO_tf.setBounds(250, 140, 150, 30);
+        p.add(AadharNO_tf);
+
+        Fetch_Button = new JButton("Fetch Detailes");
+        Fetch_Button.setBounds(410, 140, 120, 30);
+        Fetch_Button.setForeground(Color.white);
+        Fetch_Button.setBackground(Color.black);
+        Fetch_Button.setFocusable(false);
+        Fetch_Button.addActionListener(this);
+        p.add(Fetch_Button);
+
+        // After using the  Fetch Button it access the sql for the below data
+        Name_lb = new JLabel("Name");
+        Name_lb.setBounds(80, 200, 150, 30);
+        Name_lb.setFont(new Font("Railway", Font.BOLD, 18));
+        Name_lb.setForeground(Color.WHITE);
+        p.add(Name_lb);
+
+        Set_Name_LB = new JLabel();
+        Set_Name_LB.setBounds(250, 200, 150, 30);
+        Set_Name_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        Set_Name_LB.setForeground(Color.WHITE);
+        p.add(Set_Name_LB);
+
+        Nationality_LB = new JLabel("Nationality");
+        Nationality_LB.setBounds(80, 260, 150, 30);
+        Nationality_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        Nationality_LB.setForeground(Color.WHITE);
+        p.add(Nationality_LB);
+
+        Set_Nationality_LB = new JLabel();
+        Set_Nationality_LB.setBounds(250, 260, 150, 30);
+        Set_Nationality_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        Set_Nationality_LB.setForeground(Color.WHITE);
+        p.add(Set_Nationality_LB);
+
+        Gender = new JLabel("Gender");
+        Gender.setBounds(80, 320, 150, 30);
+        Gender.setFont(new Font("Railway", Font.BOLD, 18));
+        Gender.setForeground(Color.WHITE);
+        p.add(Gender);
+
+        Set_Gender_LB = new JLabel();
+        Set_Gender_LB.setBounds(250, 320, 150, 30);
+        Set_Gender_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        Set_Gender_LB.setForeground(Color.WHITE);
+        p.add(Set_Gender_LB);
+        Source_lb = new JLabel("Source");
+        Source_lb.setBounds(80, 380, 150, 25);
+        Source_lb.setFont(new Font("Railway", Font.PLAIN, 16));
+        Source_lb.setForeground(Color.WHITE);
+        p.add(Source_lb);
+
+        source = new JComboBox<>();
+        source.setBounds(250, 380, 150, 25);
+        source.setForeground(Color.WHITE);
+        source.setBackground(Color.BLACK);
+        p.add(source);
+
+        Destination_lb = new JLabel("Destination");
+        Destination_lb.setBounds(80, 440, 150, 25);
+        Destination_lb.setFont(new Font("Railway", Font.PLAIN, 16));
+        Destination_lb.setForeground(Color.WHITE);
+        p.add(Destination_lb);
+
+        destination = new JComboBox<>();
+        destination.setBounds(250, 440, 150, 25);
+        destination.setForeground(Color.WHITE);
+        destination.setBackground(Color.BLACK);
+        p.add(destination);
+
+        try {
+            DATA_BASE_CONNECTIVITY c = new DATA_BASE_CONNECTIVITY();
+            String query = "select * from Flight00  ";
+            ResultSet rs = c.s.executeQuery(query);
+
+            while (rs.next()) {
+                source.addItem(rs.getString("Source"));
+                destination.addItem(rs.getString("Destination"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Fetch_Flight_Button = new JButton("Fetch Flight");
+        Fetch_Flight_Button.setBounds(410, 440, 100, 25);
+        Fetch_Flight_Button.setForeground(Color.WHITE);
+        Fetch_Flight_Button.setBackground(Color.BLACK);
+        Fetch_Flight_Button.setFocusable(false);
+        Fetch_Flight_Button.addActionListener(this);
+        p.add(Fetch_Flight_Button);
+
+        Flight_Name_lb = new JLabel("Flight Name");
+        Flight_Name_lb.setBounds(80, 500, 150, 25);
+        Flight_Name_lb.setFont(new Font("Railway", Font.PLAIN, 16));
+        Flight_Name_lb.setForeground(Color.WHITE);
+        p.add(Flight_Name_lb);
+
+        Set_Flight_Name_lb = new JLabel();
+        Set_Flight_Name_lb.setBounds(250, 500, 150, 25);
+        Set_Flight_Name_lb.setFont(new Font("Railway", Font.PLAIN, 16));
+        Set_Flight_Name_lb.setForeground(Color.WHITE);
+        p.add(Set_Flight_Name_lb);
+
+        Flight_code_lb = new JLabel("Flight Code");
+        Flight_code_lb.setBounds(80, 560, 150, 25);
+        Flight_code_lb.setFont(new Font("Railway", Font.PLAIN, 16));
+        Flight_code_lb.setForeground(Color.WHITE);
+        p.add(Flight_code_lb);
+
+        Set_Flight_code_lb = new JLabel();
+        Set_Flight_code_lb.setBounds(250, 560, 150, 25);
+        Set_Flight_code_lb.setFont(new Font("Railway", Font.PLAIN, 16));
+        Set_Flight_code_lb.setForeground(Color.WHITE);
+        p.add(Set_Flight_code_lb);
+
+
+        date_label = new JLabel("DATE");
+        date_label.setBounds(80, 620, 200, 30);
+        date_label.setFont(new Font("Railway", Font.BOLD, 21));
+        date_label.setForeground(Color.WHITE);
+        p.add(date_label);
+
+        dateChooser = new JDateChooser();
+        dateChooser.setBounds(300, 620, 200, 30);
+        dateChooser.setForeground(Color.WHITE);
+        dateChooser.setBackground(Color.BLACK);
+        p.add(dateChooser);
+
+        Save_button = new JButton("Save");
+        Save_button.setBounds(610, 660, 150, 30);
+        Save_button.setForeground(Color.WHITE);
+        Save_button.setBackground(Color.BLACK);
+        Save_button.setFocusable(false);
+        Save_button.addActionListener(this);
+        p.add(Save_button);
+
+
+        p.setBounds(0, 0, 800, 800);
+        p.setOpaque(false);
+        add(p);
+        p.add(Bg_Label);
+
+        setContentPane(p);
+        setLayout(null);
+        setSize(800, 800);
+        setLocation(250, 30);
+        setVisible(true);
+
+    }
+
+}
+}
