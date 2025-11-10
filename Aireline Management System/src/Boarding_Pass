@@ -41,4 +41,136 @@ public class Boarding_Pass extends JFrame implements ActionListener {
         ImageIcon backimg = new ImageIcon("E:\\Spotify\\airplane_storm_resized_1000x450.png");
         setContentPane(new JLabel(backimg));
 /*
-        ImageIcon img = new ImageIcon("C:\\Users\\HP\
+        ImageIcon img = new ImageIcon("C:\\Users\\HP\\Downloads\\close s2 (1).jpg");
+        JLabel img_lb = new JLabel(img);
+        img_lb.setBounds(530, 150, 350, 360);
+        p.add(img_lb);
+*/
+
+        setTitle(" Boarding Pass");
+
+        JLabel top_LB = new JLabel(" Phoenix Airline");
+        top_LB.setBounds(380, 10, 450, 35);
+        top_LB.setFont(new Font("Railway", Font.BOLD, 26));
+        top_LB.setForeground(Color.WHITE);
+        p.add(top_LB);
+
+        PNR_LB = new JLabel("PNR Num");
+        PNR_LB.setBounds(100, 100, 150, 25);
+        PNR_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        PNR_LB.setForeground(Color.WHITE);
+        p.add(PNR_LB);
+
+        PNR_tf = new JTextField();
+        PNR_tf.setForeground(Color.WHITE);
+        PNR_tf.setBackground(Color.black);
+        PNR_tf.setBounds(220, 100, 150, 25);
+        PNR_tf.setOpaque(false);
+        p.add(PNR_tf);
+
+        Fetch_Button = new JButton("Fetch Details");
+        Fetch_Button.setBounds(380, 100, 120, 25);
+        Fetch_Button.setForeground(Color.white);
+        Fetch_Button.setBackground(Color.black);
+        Fetch_Button.setFocusable(false);
+        Fetch_Button.setOpaque(false);
+        Fetch_Button.addActionListener(this);
+        p.add(Fetch_Button);
+
+        Name_lb = new JLabel("Name");
+        Name_lb.setBounds(100, 160, 150, 25);
+        Name_lb.setFont(new Font("Railway", Font.BOLD, 18));
+        Name_lb.setForeground(Color.WHITE);
+        p.add(Name_lb);
+
+        Set_Name_LB = new JLabel();
+        Set_Name_LB.setBounds(220, 160, 150, 25);
+        Set_Name_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        Set_Name_LB.setForeground(Color.white);
+        p.add(Set_Name_LB);
+
+        Nationality_LB = new JLabel("Nationality");
+        Nationality_LB.setBounds(100, 210, 150, 25);
+        Nationality_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        Nationality_LB.setForeground(Color.WHITE);
+        p.add(Nationality_LB);
+
+        Set_Nationality_LB = new JLabel();
+        Set_Nationality_LB.setBounds(220, 210, 150, 25);
+        Set_Nationality_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        Set_Nationality_LB.setForeground(Color.WHITE);
+        p.add(Set_Nationality_LB);
+
+
+        Source_lb = new JLabel("Source");
+        Source_lb.setBounds(100, 270, 150, 25);
+        Source_lb.setFont(new Font("Railway", Font.BOLD, 16));
+        Source_lb.setForeground(Color.WHITE);
+        p.add(Source_lb);
+
+        Set_Source_LB = new JLabel();
+        Set_Source_LB.setBounds(220, 270, 150, 25);
+        Set_Source_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        Set_Source_LB.setForeground(Color.WHITE);
+        p.add(Set_Source_LB);
+
+        Destination_lb = new JLabel("Destination");
+        Destination_lb.setBounds(380, 270, 150, 25);
+        Destination_lb.setFont(new Font("Railway", Font.BOLD, 16));
+        Destination_lb.setForeground(Color.WHITE);
+        p.add(Destination_lb);
+
+        Set_Destination_LB = new JLabel();
+        Set_Destination_LB.setBounds(540, 270, 150, 25);
+        Set_Destination_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        Set_Destination_LB.setForeground(Color.WHITE);
+        p.add(Set_Destination_LB);
+
+        Flight_Name_lb = new JLabel("Flight Name");
+        Flight_Name_lb.setBounds(100, 331, 150, 25);
+        Flight_Name_lb.setFont(new Font("Railway", Font.BOLD, 16));
+        Flight_Name_lb.setForeground(Color.WHITE);
+        p.add(Flight_Name_lb);
+
+        Set_Flight_Name_lb = new JLabel();
+        Set_Flight_Name_lb.setBounds(220, 331, 150, 25);
+        Set_Flight_Name_lb.setFont(new Font("Railway", Font.BOLD, 16));
+        Set_Flight_Name_lb.setForeground(Color.WHITE);
+        p.add(Set_Flight_Name_lb);
+
+        Flight_code_lb = new JLabel("Flight Code");
+        Flight_code_lb.setBounds(380, 331, 150, 25);
+        Flight_code_lb.setFont(new Font("Railway", Font.BOLD, 16));
+        Flight_code_lb.setForeground(Color.WHITE);
+        p.add(Flight_code_lb);
+
+        Set_Flight_code_lb = new JLabel();
+        Set_Flight_code_lb.setBounds(540, 331, 150, 25);
+        Set_Flight_code_lb.setFont(new Font("Railway", Font.BOLD, 16));
+        Set_Flight_code_lb.setForeground(Color.WHITE);
+        p.add(Set_Flight_code_lb);
+
+
+        date_label = new JLabel("DATE");
+        date_label.setBounds(100, 380, 150, 25);
+        date_label.setFont(new Font("Railway", Font.BOLD, 21));
+        date_label.setForeground(Color.WHITE);
+        p.add(date_label);
+
+        Set_date_code_lb = new JLabel();
+        Set_date_code_lb.setBounds(220, 380, 150, 25);
+        Set_date_code_lb.setFont(new Font("Railway", Font.PLAIN, 16));
+        Set_date_code_lb.setForeground(Color.WHITE);
+        p.add(Set_date_code_lb);
+
+        p.setBounds(0, 0, 1000, 450);
+        p.setOpaque(false);
+        p.setLayout(null);
+        // add(logo);
+        add(p);
+
+        setLayout(null);
+        setSize(1000, 450);
+        setLocation(190, 160);
+        setVisible(true);
+    }
