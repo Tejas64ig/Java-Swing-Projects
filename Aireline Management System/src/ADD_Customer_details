@@ -1,0 +1,153 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class ADD_Customer_details extends JFrame implements ActionListener {
+
+    JLabel Name_lb;
+    JTextField Name_tf;
+
+    JLabel Nationality_LB;
+    JTextField Nationality_tf;
+
+    JLabel Phone_num_lb;
+    JTextField Phone_num_tf;
+
+    JLabel Gender;
+    JRadioButton male;
+    JRadioButton female;
+    JRadioButton Other;
+
+    JLabel AadharNO_LB;
+    JTextField AadharNO_tf;
+
+    JButton Sigh_button;
+    JButton Reset_button;
+
+    ADD_Customer_details() {
+
+        JPanel p = new JPanel();
+        p.setLayout(null);
+
+
+        ImageIcon Bg = new ImageIcon("C:\\Users\\HP\\Downloads\\ChatGPT Image May 26, 2025, 09_17_07 PM.png");
+        JLabel Bg_Label = new JLabel(Bg);
+        Bg_Label.setBounds(0, 0, 800, 720);
+
+
+        ImageIcon img = new ImageIcon("C:\\Users\\HP\\Downloads\\close s2 (1).jpg");
+        JLabel img_lb = new JLabel(img);
+        img_lb.setBounds(510, 120, 350, 400);
+        p.add(img_lb);
+
+
+
+        JLabel top_LB = new JLabel("Enter your details");
+        top_LB.setBounds(210, 40, 400, 30);
+        top_LB.setFont(new Font("Railway", Font.BOLD, 26));
+        top_LB.setForeground(Color.WHITE);
+        p.add(top_LB);
+
+        Name_lb = new JLabel("Name");
+        Name_lb.setBounds(80, 140, 150, 30);
+        Name_lb.setFont(new Font("Railway", Font.BOLD, 18));
+        Name_lb.setForeground(Color.WHITE);
+        p.add(Name_lb);
+
+        Name_tf = new JTextField();
+        Name_tf.setBounds(250, 140, 200, 30);
+        p.add(Name_tf);
+
+        Nationality_LB = new JLabel("Nationality");
+        Nationality_LB.setBounds(80, 240, 150, 30);
+        Nationality_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        Nationality_LB.setForeground(Color.WHITE);
+        p.add(Nationality_LB);
+
+        Nationality_tf = new JTextField();
+        Nationality_tf.setBounds(250, 240, 200, 30);
+        p.add(Nationality_tf);
+
+        AadharNO_LB = new JLabel("Aadhar Num");
+        AadharNO_LB.setBounds(80, 340, 150, 30);
+        AadharNO_LB.setFont(new Font("Railway", Font.BOLD, 18));
+        AadharNO_LB.setForeground(Color.WHITE);
+        p.add(AadharNO_LB);
+
+        AadharNO_tf = new JTextField();
+        AadharNO_tf.setBounds(250, 340, 200, 30);
+        p.add(AadharNO_tf);
+
+
+        Gender = new JLabel("Gender");
+        Gender.setBounds(80, 440, 150, 30);
+        Gender.setFont(new Font("Railway", Font.BOLD, 18));
+        Gender.setForeground(Color.WHITE);
+        p.add(Gender);
+
+        male = new JRadioButton("Male");
+        male.setBounds(250, 440, 70, 30);
+        male.setFont(new Font("Railway", Font.PLAIN, 16));
+        male.setForeground(Color.WHITE);
+        male.setOpaque(false);
+
+        female = new JRadioButton("Female");
+        female.setBounds(330, 440, 90, 30);
+        female.setFont(new Font("Railway", Font.PLAIN, 16));
+        female.setForeground(Color.WHITE);
+        female.setOpaque(false);
+
+        Other = new JRadioButton("Other");
+        Other.setBounds(430, 440, 80, 30);
+        Other.setFont(new Font("Railway", Font.PLAIN, 16));
+        Other.setForeground(Color.WHITE);
+        Other.setOpaque(false);
+
+        ButtonGroup Button_GP = new ButtonGroup();
+        Button_GP.add(male);
+        Button_GP.add(female);
+        Button_GP.add(Other);
+
+        p.add(male);
+        p.add(female);
+        p.add(Other);
+
+
+        Phone_num_lb = new JLabel("Phone No");
+        Phone_num_lb.setBounds(80, 540, 150, 30);
+        Phone_num_lb.setFont(new Font("Railway", Font.BOLD, 18));
+        Phone_num_lb.setForeground(Color.WHITE);
+        p.add(Phone_num_lb);
+
+        Phone_num_tf = new JTextField();
+        Phone_num_tf.setBounds(250, 540, 200, 30);
+        p.add(Phone_num_tf);
+
+        Sigh_button = new JButton("SIGH UP ");
+        Sigh_button.setBounds(450,600,150,30);
+        Sigh_button.setForeground(Color.white);
+        Sigh_button.setBackground(Color.black);
+        Sigh_button.setFocusable(false);
+        Sigh_button.addActionListener(this);
+        p.add(Sigh_button);
+
+        Reset_button = new JButton("RESET ");
+        Reset_button.setBounds(620,600,150,30);
+        Reset_button.setForeground(Color.WHITE);
+        Reset_button.setBackground(Color.black);
+        Reset_button.setFocusable(false);
+        Reset_button.addActionListener(this);
+        p.add(Reset_button);
+
+        p.setBounds(0, 0, 800, 720);
+        p.setOpaque(false);
+        add(p);
+        p.add(Bg_Label);
+
+        setContentPane(p);
+        setLayout(null);
+        setSize(800, 720);
+        setLocation(300, 60);
+        setVisible(true);
+    }
