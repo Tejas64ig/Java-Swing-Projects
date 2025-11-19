@@ -1,0 +1,42 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.Random;
+
+public class Sighup_3pg extends JFrame implements ActionListener {
+
+    JLabel Additional_details_label;
+
+    JLabel Account_type_label;
+    JRadioButton saving_acc_checkbox;
+    JRadioButton Fixed_Deposit_checkbox;
+    JRadioButton Current_acc_checkbox;
+    JRadioButton Recurring_acc_checkbox;
+
+    JLabel card_no_label;
+    JLabel card_label;
+    JLabel cardNum_Label;
+
+    JLabel Pin_no_label;
+    JLabel Pin_label;
+    JLabel PINNUM_LABEL;
+
+    JLabel Services_Required_label;
+    JCheckBox Atm_Card_checkbox;
+    JCheckBox Internet_banking_checkbox;
+    JCheckBox Mobile_banking_checkbox;
+    JCheckBox Book_Check_checkbox;
+    JCheckBox Emails_alerts_Checkbok;
+    JCheckBox c7;
+    JCheckBox E_Statement_checkbox;
+   JPanel p;
+    JButton Submit_Button;
+    JButton cancel_Button;
+    String formno;
+
+    Sighup_3pg(String formno) {
+        this.formno = formno;
+        p = new JPanel();
+/*
