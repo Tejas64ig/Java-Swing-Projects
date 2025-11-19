@@ -189,3 +189,25 @@ public class Sighup_3pg extends JFrame implements ActionListener {
 
 
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == Submit_Button) {
+
+            java.lang.String Account_type_label = null;
+            if (saving_acc_checkbox.isSelected()) {
+
+                Account_type_label = "saving_acc_checkbox";
+            }
+            if (Fixed_Deposit_checkbox.isSelected()) {
+
+                Account_type_label = "Fixed_Deposit_checkbox";
+            }
+            if (Current_acc_checkbox.isSelected()) {
+
+                Account_type_label = "Current_acc_checkbox";
+            } if (Recurring_acc_checkbox.isSelected()) {
+
+                Account_type_label = "Current_acc_checkbox";
+            }
