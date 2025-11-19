@@ -40,3 +40,23 @@ public class Sighup_3pg extends JFrame implements ActionListener {
         this.formno = formno;
         p = new JPanel();
 /*
+
+        ImageIcon Bg = new ImageIcon("C:\\Users\\HP\\OneDrive\\Desktop\\try2.png");
+        JLabel Bg_Label = new JLabel(Bg);
+        Bg_Label.setBounds(0, 0, 400, 500);
+        setContentPane(new JLabel(Bg));
+*/   setTitle("3 Page ");
+        Additional_details_label = new JLabel("NEW ACCOUNT APPLICATION FORM " +formno+"- PAGE 3 ");
+        Additional_details_label.setFont(new Font("Raleway", Font.BOLD, 22));
+        Additional_details_label.setBounds(130, 40, 900, 40);
+        p.add(Additional_details_label);
+
+        Account_type_label = new JLabel("ACCOUNT TYPE :");
+        Account_type_label.setBounds(100, 140, 200, 30);
+        Account_type_label.setFont(new Font("Railway", Font.BOLD, 21));
+        p.add(Account_type_label);
+
+        saving_acc_checkbox = new JRadioButton("Saving Account");
+        saving_acc_checkbox.setBounds(100, 180, 150, 30);
+        saving_acc_checkbox.setFont(new Font("Railway", Font.BOLD, 21));
+        p.add(saving_acc_checkbox);
