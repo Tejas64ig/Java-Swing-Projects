@@ -97,3 +97,9 @@ public class Deposite extends JFrame implements ActionListener {
         }
     }
 
+    public static void main(String[] args) {
+        Deposite P= new Deposite( "");
+
+}
+
+}
