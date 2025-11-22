@@ -141,3 +141,23 @@ JButton  Deposite_b;
                 ex.printStackTrace();
             }
         }
+       /*
+        else if(e.getSource()==CashWithdraw_b){
+
+
+        }
+        else if(e.getSource()==FastCash_eb){
+
+
+        }
+        else if(e.getSource()==MiniState_b){
+
+
+        }
+        else if(e.getSource()==PinChange_b){
+
+        }
+        if(e.getSource()==BalanceEnquiry_b){
+
+        }
+*/
