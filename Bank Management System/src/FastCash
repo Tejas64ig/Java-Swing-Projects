@@ -74,3 +74,34 @@ JButton  Deposite_b;
         PinChange_b.setBounds(75,385,160,30);
         PinChange_b.addActionListener(this);
         p.add(PinChange_b);
+  BalanceEnquiry_b = new JButton("9999");
+        BalanceEnquiry_b.setFont(new Font("raileay",Font.BOLD,21));
+        BalanceEnquiry_b.setForeground(Color.white);
+        BalanceEnquiry_b.setBackground(Color.BLACK);
+        BalanceEnquiry_b.setFocusable(false);
+        BalanceEnquiry_b.setBounds(250,385,210,30);
+        BalanceEnquiry_b.addActionListener(this);
+        p.add(BalanceEnquiry_b);
+
+        Exit_b = new JButton(" Back   ");
+        Exit_b.setFont(new Font("raileay",Font.BOLD,21));
+        Exit_b.setForeground(Color.white);
+        Exit_b.setBackground(Color.BLACK);
+        Exit_b.setFocusable(false);
+        Exit_b.setBounds(320,425,140,30);
+        Exit_b.addActionListener(this);
+        p.add(Exit_b);
+
+
+        p.setBounds(0, 0, 800, 720);
+        p.setOpaque(false);
+        p.setLayout(null);
+        // add(logo);
+        add(p);
+
+        setLayout(null);
+        setSize(800, 720);
+        setLocation(300, 60);
+        setVisible(true);
+
+    }
