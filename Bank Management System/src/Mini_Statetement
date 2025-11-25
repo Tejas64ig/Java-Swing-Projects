@@ -36,5 +36,39 @@ public class Mini_Statetement extends JFrame implements ActionListener {
             card.setForeground(Color.WHITE);
             card.setBounds(20,80,300,20);
             p.add(card);
+            Back_b = new JButton("Back");
+            Back_b.setBounds(370, 430, 90, 30);
+            Back_b.setForeground(Color.WHITE);
+            Back_b.setBackground(Color.BLACK);
+            Back_b.setFocusable(false);
+            Back_b.addActionListener(this);
+            p.add(Back_b);
+
+
+            p.setBounds(0, 0, 800, 720);
+            p.setOpaque(false);
+            p.setLayout(null);
+            add(p);
+
+            p.setBounds(0, 0, 800, 720);
+            p.setOpaque(false);
+            p.setLayout(null);
+            setLayout(null);
+            add(p);
+            setSize(800, 720);
+            setLocation(300, 60);
+            setVisible(true);
+
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        setVisible(false);
+        new Trans(pinnumber).setVisible(true);
+    }
+    public static void main(String[] args) {
+        Mini_Statetement p = new Mini_Statetement( "");
+    }
 }
-}
+
