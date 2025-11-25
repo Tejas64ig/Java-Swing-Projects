@@ -1,1 +1,26 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
+public class Mini_Statetement extends JFrame implements ActionListener {
+        String pinnumber;
+    JButton Back_b;
+        Mini_Statetement( String pinnumber){
+        this.pinnumber= pinnumber;
+
+        JPanel p = new JPanel();
+
+            ImageIcon Bg = new ImageIcon("C:\\Users\\HP\\Downloads\\atm.jpg ");
+            JLabel Bg_Label = new JLabel(Bg);
+            Bg_Label.setBounds(0, 0, 400, 500);
+            setContentPane(new JLabel(Bg));
+            ImageIcon img =  new ImageIcon(" C:\\Users\\HP\\OneDrive\\Desktop\\Bank background_Zoro.jpg");
+            JLabel img_lb = new JLabel(img);
+            img_lb.setBounds(510, 420, 350, 400);
+            p.add(img_lb);
+        setTitle("Mini Statetement");
+
+       }
+}
