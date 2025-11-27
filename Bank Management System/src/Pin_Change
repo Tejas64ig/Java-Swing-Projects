@@ -85,3 +85,28 @@ public class Pin_Change extends JFrame implements ActionListener {
         setLocation(300, 60);
         setVisible(true);
     }
+rride
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == Change_Button) {
+            try {
+                String New_pin = pin_passfield.getText();
+                String Re_NEW_pin = Re_new_pinTextFiled.getText();
+
+                if (!New_pin.equals(Re_NEW_pin)) {
+                    JOptionPane.showMessageDialog(null, "The Entered pin does not match");
+                    return;
+                }
+                if (New_pin.equals("")) {
+
+                    JOptionPane.showMessageDialog(null, " Entered a pin ");
+                }
+            } catch (Exception ae) {
+                System.out.println(ae);
+            }
+        }
+
+        if (e.getSource() == Back_Button) {
+            setVisible(false);
+            new Trans(pinnumber).setVisible(true);
+        }
+    }
