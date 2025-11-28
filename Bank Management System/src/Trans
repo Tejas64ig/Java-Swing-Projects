@@ -105,10 +105,41 @@ public class Trans extends JFrame implements ActionListener {
 
     }
 
-
-
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
-}
+
+        if(e.getSource()==Exit_b){
+            System.exit(0);
+        }
+        else if(e.getSource()==Deposite_b){
+            setVisible(false);
+           new Deposite( pinnumber).setVisible(true);
+
+        }
+        else if(e.getSource()==CashWithdraw_b){
+            setVisible(false);
+             new CashWithdraw(pinnumber).setVisible(true);
+        }
+        else if(e.getSource()==FastCash_eb){
+            setVisible(false);
+             new FastCash( pinnumber).setVisible(true);
+
+        }
+        else if(e.getSource()==MiniState_b){
+            setVisible(false);
+            new Mini_Statetement(pinnumber).setVisible(true);
+        }
+        else if(e.getSource()==PinChange_b){
+            setVisible(false);
+         new Pin_Change(pinnumber).setVisible(true);
+
+        }
+        if(e.getSource()==BalanceEnquiry_b){
+            setVisible(false);
+                new Bal_Enq(pinnumber).setVisible(true);
+
+
+        }
+
+
+    }
