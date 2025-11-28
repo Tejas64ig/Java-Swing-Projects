@@ -1,7 +1,27 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Trans extends JFrame implements ActionListener { }
+public class Trans extends JFrame implements ActionListener {
+    JButton Deposite_b;
+    JButton  CashWithdraw_b;
+    JButton  FastCash_eb;
+    JButton  MiniState_b;
+    JButton  PinChange_b;
+    JButton  BalanceEnquiry_b;
+    JButton Exit_b;
+    String pinnumber;
+    Trans(String pinnumber){
+        this.pinnumber = pinnumber;
+        JPanel p= new JPanel();
+ }
+
+
+
+
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+}
