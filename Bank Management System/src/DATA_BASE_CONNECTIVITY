@@ -11,6 +11,16 @@ public class DATA_BASE_CONNECTIVITY {
 
     DATA_BASE_CONNECTIVITY() {
 
+Connection c;
+
+
+        try {
+            c = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/bankMagementsystem",
+                    "root",
+                    "xxxxxxx"
+            );
+            s= c.createStatement();
 
             System.out.println(e);
 
