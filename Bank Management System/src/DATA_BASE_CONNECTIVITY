@@ -11,8 +11,6 @@ public class DATA_BASE_CONNECTIVITY {
 
     DATA_BASE_CONNECTIVITY() {
 
-        
-        } catch (Exception e) {
 
             System.out.println(e);
 
