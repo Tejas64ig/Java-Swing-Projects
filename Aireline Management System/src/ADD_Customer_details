@@ -171,7 +171,23 @@ public class ADD_Customer_details extends JFrame implements ActionListener {
             Gender = "Other";
         }
         String Phone_num = Phone_num_tf.getText();
+  if(e.getSource()==Sigh_button) {
+            try {
 
+                DATA_BASE_CONNECTIVITY c = new DATA_BASE_CONNECTIVITY();
+
+
+                String q = "insert  into Passenger00 values ('" + Name + "','" + Nationality + "','" + Aadhar_NO + "','" + Gender + "','" + Phone_num + "')";
+
+                c.s.executeUpdate(q);
+
+                JOptionPane.showMessageDialog(null, "Customer Details Added Successfully");
+
+                setVisible(false);
+            }
+            catch (Exception ae){
+
+            }
        
         }
         if(e.getSource()==Reset_button)
