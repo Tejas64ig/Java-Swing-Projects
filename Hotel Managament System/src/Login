@@ -93,7 +93,15 @@ public class Login extends JFrame implements ActionListener {
     }
  @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == resetBtn) {
+ if (e.getSource() == loginBtn) {
+            DATA_BASE_CONNECTIVITY c = new DATA_BASE_CONNECTIVITY();
+            String cardNum = idField.getText();
+            String pin = new String(passwordField.getPassword());
+            String q = "SELECT * FROM LOGIN_1 WHERE cardNum = '" + cardNum + "' AND pin = '" + pin + "'";
+
+           
+        } 
+else  if (e.getSource() == resetBtn) {
             idField.setText("");
             passwordField.setText("");
         } else if (e.getSource() == signupBtn) {
