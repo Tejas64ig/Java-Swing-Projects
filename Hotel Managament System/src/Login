@@ -97,9 +97,20 @@ public class Login extends JFrame implements ActionListener {
             DATA_BASE_CONNECTIVITY c = new DATA_BASE_CONNECTIVITY();
             String cardNum = idField.getText();
             String pin = new String(passwordField.getPassword());
-            String q = "SELECT * FROM LOGIN_1 WHERE cardNum = '" + cardNum + "' AND pin = '" + pin + "'";
-
-           
+            String q = "SELECT * FROM LOGIN WHERE cardNum = '" + cardNum + "' AND pin = '" + pin + "'";
+       try {
+                ResultSet rs = c.s.executeQuery(q);
+                if (rs.next()) {
+                    setVisible(false);
+                    new Trans(pin).setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Incorrect Cardnumber or pin");
+                    idField.setText("");
+                    passwordField.setText("");
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         } 
 else  if (e.getSource() == resetBtn) {
             idField.setText("");
@@ -109,7 +120,6 @@ else  if (e.getSource() == resetBtn) {
             new Sigh_Up().setVisible(true);
         }
     }
-
    
     public static void main(String[] args) {
         new Login();
