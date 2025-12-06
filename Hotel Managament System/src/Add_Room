@@ -209,6 +209,21 @@ public class AddRoom extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         try {
             if (ae.getSource() == add_b) {
+ try {
+        DATA_BASE_CONNECTIVITY c = new DATA_BASE_CONNECTIVITY();
+                    String room = roomNumber_t.getText();
+                    String available = (String) availability_cb.getSelectedItem();
+                    String status = (String) cleaningStatus_cb.getSelectedItem();
+                    String price = price_t.getText();
+                    String type = (String) bedType_cb.getSelectedItem();
+                    String str = "INSERT INTO room values( '" + room + "', '" + available + "', '" + status + "','" + price + "', '" + type + "')";
+                    
+                    c.s.executeUpdate(str);
+                    JOptionPane.showMessageDialog(null, "Room Successfully Added");
+                    setVisible(false);
+                } catch (Exception ee) {
+                    System.out.println(ee);
+                }
             } 
 else if (ae.getSource() == back_b) {
                 setVisible(false);
