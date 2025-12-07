@@ -128,7 +128,9 @@ public class AddDrivers extends JFrame implements ActionListener {
                     String brand = carBrand_tf.getText();
                     String available = (String)available_cb.getSelectedItem();
                     String location = location_tf.getText();
-                    
+
+       String str = "INSERT INTO driver values( '"+name+"', '"+age+"', '"+gender+"','"+company+"', '"+brand+"', '"+available+"','"+location+"')";
+                 
                     c.s.executeUpdate(str);
 
                     JOptionPane.showMessageDialog(null, "Driver Successfully Added");
