@@ -1,1 +1,28 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.sql.*;
+
+public class AddDrivers extends JFrame implements ActionListener {
+    private JTextField name_tf, age_tf, carCompany_tf, carBrand_tf, location_tf;
+    private JComboBox gender_cb, available_cb;
+    JButton add_btn, back_btn;
+    JLabel ADD_Driver_label, name_label, age_label, gender_label, carCompany_label, carBrand_label, available_label, location_label, bg_image_label;
+
+    public AddDrivers() {
+        setSize(1000, 500);
+        setLocation(450, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(null);
+        setVisible(true);
+    }
+    
+    public void actionPerformed(ActionEvent ae){
+      
+    }
+
+    public static void main(String[] args) {
+        new AddDrivers();
+    }
+}
 
