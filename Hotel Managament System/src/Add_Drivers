@@ -118,6 +118,27 @@ public class AddDrivers extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae){
     try{
             if(ae.getSource() == add_btn){
+            
+             DATA_BASE_CONNECTIVITY c = new DATA_BASE_CONNECTIVITY();
+
+                    String name = name_tf.getText();
+                    String age = age_tf.getText();
+                    String gender = (String)gender_cb.getSelectedItem();
+                    String company  = carCompany_tf.getText();
+                    String brand = carBrand_tf.getText();
+                    String available = (String)available_cb.getSelectedItem();
+                    String location = location_tf.getText();
+                    
+                    c.s.executeUpdate(str);
+
+                    JOptionPane.showMessageDialog(null, "Driver Successfully Added");
+
+                    this.setVisible(false);
+
+                }
+                 catch(Exception ee){
+                    System.out.println(ee);
+                }
 
                 }
         
