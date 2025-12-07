@@ -116,9 +116,18 @@ public class AddDrivers extends JFrame implements ActionListener {
     }
     
     public void actionPerformed(ActionEvent ae){
-      
-    }
+    try{
+            if(ae.getSource() == add_btn){
 
+                }
+        
+            else if(ae.getSource() == back_btn){
+                this.setVisible(false);
+            }
+        }
+        catch (Exception ee) {
+                ee.printStackTrace();
+            }
     public static void main(String[] args) {
         new AddDrivers();
     }
