@@ -1,3 +1,5 @@
+package hotel.management.system;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
@@ -7,8 +9,97 @@ import net.proteanit.sql.DbUtils;
 
 public class CustomerInfo extends JFrame implements ActionListener {
 
-}
+    Connection conn = null;
+    private JPanel contentPane;
+    private JTable customer_table;
+
+    private JLabel id_label;
+    private JLabel number_label;
+    private JLabel name_label;
+    private JLabel gender_label;
+    private JLabel country_label;
+    private JLabel room_label;
+    private JLabel status_label;
+    private JLabel deposit_label;
+
+    private JButton loadData_btn;
+    private JButton back_btn;
+
+    public CustomerInfo() throws SQLException {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(530, 200, 900, 600);
+
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
+
+        // Back button
+        back_btn = new JButton("Back");
+        back_btn.setBounds(450, 510, 120, 30);
+        back_btn.setBackground(Color.BLACK);
+        back_btn.setForeground(Color.WHITE);
+        back_btn.addActionListener(this);
+        contentPane.add(back_btn);
+
+        // Load Data button
+        loadData_btn = new JButton("Load Data");
+        loadData_btn.setBounds(300, 510, 120, 30);
+        loadData_btn.setBackground(Color.BLACK);
+        loadData_btn.setForeground(Color.WHITE);
+        loadData_btn.addActionListener(this);
+        contentPane.add(loadData_btn);
+
+        // Header labels
+        id_label = new JLabel("ID");
+        id_label.setBounds(31, 11, 46, 14);
+        contentPane.add(id_label);
+
+        number_label = new JLabel("Number");
+        number_label.setBounds(150, 11, 60, 14);
+        contentPane.add(number_label);
+
+        name_label = new JLabel("Name");
+        name_label.setBounds(270, 11, 65, 14);
+        contentPane.add(name_label);
+
+        gender_label = new JLabel("Gender");
+        gender_label.setBounds(360, 11, 60, 14);
+        contentPane.add(gender_label);
+
+        country_label = new JLabel("Country");
+        country_label.setBounds(480, 11, 60, 14);
+        contentPane.add(country_label);
+
+        room_label = new JLabel("Room");
+        room_label.setBounds(600, 11, 60, 14);
+        contentPane.add(room_label);
+
+        status_label = new JLabel("Check-in Status");
+        status_label.setBounds(680, 11, 100, 14);
+        contentPane.add(status_label);
+
+        deposit_label = new JLabel("Deposit");
+        deposit_label.setBounds(800, 11, 100, 14);
+        contentPane.add(deposit_label);
+
+        // Table
+        customer_table = new JTable();
+        customer_table.setBounds(0, 40, 900, 450);
+        contentPane.add(customer_table);
+
+        getContentPane().setBackground(Color.WHITE);
+    }
+
     @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == loadData_btn) {
 
-
+        } 
+         else if (e.getSource() == back_btn) {
+            new Reception().setVisible(true);
+            setVisible(false);
+        }
+    }
 }
+
