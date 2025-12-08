@@ -25,6 +25,26 @@ public class CustomerInfo extends JFrame implements ActionListener {
     private JButton loadData_btn;
     private JButton back_btn;
 
+
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+
+                    CustomerInfo frame = new CustomerInfo();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    } 
+
+  public void close() {
+        this.dispose();
+    }
+
+
     public CustomerInfo() throws SQLException {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(530, 200, 900, 600);
