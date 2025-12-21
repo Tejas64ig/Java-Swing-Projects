@@ -92,6 +92,15 @@ public class ManagerInfo extends JFrame implements ActionListener {
         contentPane.add(gmail_label);
     }
 
+  
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == loadData_btn) {
+          
+            }
+        } else if (e.getSource() == back_btn) {
+            new Reception().setVisible(true);
+            setVisible(false);
+        }
+    }
 }
