@@ -1,1 +1,32 @@
 
+import java.awt.*;
+import java.awt.event.*;
+import java.sql.*;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import net.proteanit.sql.DbUtils;
+
+public class ManagerInfo extends JFrame implements ActionListener {
+
+
+    private JPanel contentPane;
+    private JTable manager_table;
+
+    private JLabel name_label;
+    private JLabel age_label;
+    private JLabel gender_label;
+    private JLabel job_label;
+    private JLabel salary_label;
+    private JLabel phone_label;
+    private JLabel aadhar_label;
+    private JLabel gmail_label;
+
+    private JButton loadData_btn;
+    private JButton back_btn;
+
+    public static void main(String[] args) {
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+}
