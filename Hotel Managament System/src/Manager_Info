@@ -97,7 +97,10 @@ public class ManagerInfo extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == loadData_btn) {
             try {
-
+            DATA_BASE_CONNECTIVITY c = new DATA_BASE_CONNECTIVITY();
+                String displayManagersSql =
+                ResultSet rs = c.s.executeQuery(displayManagersSql);
+                manager_table.setModel(DbUtils.resultSetToTableModel(rs));    
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
