@@ -25,6 +25,71 @@ public class ManagerInfo extends JFrame implements ActionListener {
     private JButton back_btn;
 
     public static void main(String[] args) {
+      new ManagerInfo().setVisible(true);
+    }
+
+    public void close() {
+        this.dispose();
+    }
+
+    public ManagerInfo() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(430, 200, 1000, 600);
+
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
+
+        manager_table = new JTable();
+        manager_table.setBounds(0, 34, 1000, 450);
+        contentPane.add(manager_table);
+
+        loadData_btn = new JButton("Load Data");
+        loadData_btn.setBounds(350, 500, 120, 30);
+        loadData_btn.setBackground(Color.BLACK);
+        loadData_btn.setForeground(Color.WHITE);
+        loadData_btn.addActionListener(this);
+        contentPane.add(loadData_btn);
+
+        back_btn = new JButton("Back");
+        back_btn.setBounds(510, 500, 120, 30);
+        back_btn.setBackground(Color.BLACK);
+        back_btn.setForeground(Color.WHITE);
+        back_btn.addActionListener(this);
+        contentPane.add(back_btn);
+
+        name_label = new JLabel("Name");
+        name_label.setBounds(41, 11, 46, 14);
+        contentPane.add(name_label);
+
+        age_label = new JLabel("Age");
+        age_label.setBounds(159, 11, 46, 14);
+        contentPane.add(age_label);
+
+        gender_label = new JLabel("Gender");
+        gender_label.setBounds(273, 11, 46, 14);
+        contentPane.add(gender_label);
+
+        job_label = new JLabel("Job");
+        job_label.setBounds(416, 11, 86, 14);
+        contentPane.add(job_label);
+
+        salary_label = new JLabel("Salary");
+        salary_label.setBounds(536, 11, 86, 14);
+        contentPane.add(salary_label);
+
+        phone_label = new JLabel("Phone");
+        phone_label.setBounds(656, 11, 86, 14);
+        contentPane.add(phone_label);
+
+        aadhar_label = new JLabel("Aadhar");
+        aadhar_label.setBounds(786, 11, 86, 14);
+        contentPane.add(aadhar_label);
+
+        gmail_label = new JLabel("Gmail");
+        gmail_label.setBounds(896, 11, 86, 14);
+        contentPane.add(gmail_label);
     }
 
     @Override
