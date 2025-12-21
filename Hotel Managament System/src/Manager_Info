@@ -98,7 +98,7 @@ public class ManagerInfo extends JFrame implements ActionListener {
         if (e.getSource() == loadData_btn) {
             try {
             DATA_BASE_CONNECTIVITY c = new DATA_BASE_CONNECTIVITY();
-                String displayManagersSql =
+                String displayManagersSql =  "select * from Employee where job = 'Manager'";
                 ResultSet rs = c.s.executeQuery(displayManagersSql);
                 manager_table.setModel(DbUtils.resultSetToTableModel(rs));    
             } catch (Exception ex) {
