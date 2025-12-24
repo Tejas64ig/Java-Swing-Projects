@@ -30,7 +30,6 @@ public class ADD_Customer_details extends JFrame implements ActionListener {
         JPanel p = new JPanel();
         p.setLayout(null);
 
-
         ImageIcon Bg = new ImageIcon("C:\\Users\\HP\\Downloads\\ChatGPT Image May 26, 2025, 09_17_07 PM.png");
         JLabel Bg_Label = new JLabel(Bg);
         Bg_Label.setBounds(0, 0, 800, 720);
@@ -188,7 +187,6 @@ public class ADD_Customer_details extends JFrame implements ActionListener {
             catch (Exception ae){
 
             }
-       
         }
         if(e.getSource()==Reset_button)
         {
